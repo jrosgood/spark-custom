@@ -16,7 +16,7 @@ cd /tmp
 git clone https://github.com/apache/spark.git spark_src
 cd spark_src
 git checkout "tags/v$spark_version" -b "v$spark_version"
-./dev/make-distribution.sh --name hadoop$hadoop_version-scala$scala_version --pip --tgz -Phive -Phive-thriftserver -Pmesos -Pyarn -Pkubernetes -Dhadoop.version=$hadoop_version
+./dev/make-distribution.sh --name hadoop$hadoop_version-scala$scala_version --pip --tgz -Phive -Phive-thriftserver -Pmesos -Pyarn -Pkubernetes -Phadoop-provided -Dhadoop.version=$hadoop_version
 fname=spark-$spark_version-bin-hadoop$hadoop_version-scala$scala_version
 cp /tmp/spark_src/$fname.tgz $to_directory/$fname.tgz
 # cleanup
